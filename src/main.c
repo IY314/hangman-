@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 #include "curl.h"
-#include "hangman.h"
+#include "gen.h"
 
 int main() {
     rand_init();
@@ -12,12 +12,9 @@ int main() {
     get_words(
         &output,
         "https://raw.githubusercontent.com/IY314/hangman-/main/words.txt");
-    puts(output);
-
     char *word = get_word(output);
-    puts(word);
-
     free(output);
+    puts(word);
     free(word);
     return 0;
 }
